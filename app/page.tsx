@@ -1,4 +1,4 @@
-import Footer from "@/components/footer";
+import FooterHome from "@/components/FooterHome";
 import HomeHeader from "@/components/HomeHeader";
 import Intro from "@/components/Intro";
 import Image from "next/image";
@@ -16,7 +16,7 @@ export default function Home() {
 
       </section>
       <section className="h-24 border-t">
-      <Footer/>
+       <FooterHome/>
       </section>
     </main>
   );
