@@ -1,7 +1,12 @@
+import HomeHeader from "@/components/HomeHeader";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <h1>Testing</h1>
+    <main>
+      <section className="h-24 border-b">
+      <HomeHeader/>
+      </section>
+    </main>
   );
 }
