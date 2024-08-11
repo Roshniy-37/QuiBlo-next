@@ -1,23 +1,15 @@
 import FooterHome from "@/components/FooterHome";
 import HomeHeader from "@/components/HomeHeader";
 import Intro from "@/components/Intro";
-import Image from "next/image";
+import Tabs from "@/components/Tabs";
 
 export default function Home() {
   return (
-    <main>
-      <section className="h-24 border-b">
-        <HomeHeader/>
-      </section>
-      <section className="h-[75vh] border-b">
-        <Intro/>
-      </section>
-      <section className="h-[75vh] border-b">
-
-      </section>
-      <section className="h-24 border-t">
-       <FooterHome/>
-      </section>
+    <main className="h-full w-full bg-[#020427]">
+     <HomeHeader/>
+     <Intro/>
+     <Tabs/>
+     <FooterHome/>
     </main>
   );
 }
