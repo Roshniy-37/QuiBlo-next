@@ -2,7 +2,7 @@ import React from 'react'
 
 function FooterHome() {
   return (
-    <div>
+    <div className='h-16 w-full'>
       
     </div>
   )
