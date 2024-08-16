@@ -1,44 +1,25 @@
-import { Button } from '@/components/ui/button'
-import { ChevronLeft } from 'lucide-react'
-import React from 'react'
+'use client'
 
-const Page = () => {
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { v4 as uuidv4 } from 'uuid';
+
+const JoinQuizPage: React.FC = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    // Generate a unique quizId
+    const quizId = uuidv4();
+
+    // Redirect to the dynamic quiz page with the quizId
+    router.push(`/JoinQuiz/${quizId}`);
+  }, [router]);
+
   return (
-    <div className='w-full h-screen bg-neutral-100'>
-      <div className='flex justify-center items-center flex-col pt-[10vh] relative'>
-
-        {/* Question */}
-        <div className='space-y-6 text-center bg-[#7560EE]/20 px-[38vw] py-[6vh] absolute top-0'>
-            <h1 className='text-6xl font-bold'>Question 1</h1>
-            <p className='text-2xl font-medium'>What is the capital of France?</p>
-        </div>
-
-        {/* Choices */}
-        <div className='flex justify-center px-40 pt-[24vh] z-40'>
-            <div className='grid grid-cols-2 gap-10'>
-                <div className='border shadow-sm bg-neutral-50 rounded-xl py-16 px-40 flex justify-center items-center  hover:bg-[#7560EE]/80 hover:text-white transition-all duration-150'>
-                    <p className='text-2xl font-medium'>Paris</p>
-                </div>
-                <div className='border shadow-sm bg-neutral-50 rounded-xl py-16 px-40 flex justify-center items-center  hover:bg-[#7560EE]/80 hover:text-white transition-all duration-150'>
-                    <p className='text-2xl font-medium'>Athens</p>
-                </div>
-                <div className='border shadow-sm bg-neutral-50 rounded-xl py-16 px-40 flex justify-center items-center  hover:bg-[#7560EE]/80 hover:text-white transition-all duration-150'>
-                    <p className='text-2xl font-medium'>Tokyo</p>
-                </div>
-                <div className='border shadow-sm bg-neutral-50 rounded-xl py-16 px-40 flex justify-center items-center  hover:bg-[#7560EE]/80 hover:text-white transition-all duration-150'>
-                    <p className='text-2xl font-medium'>Delhi</p>
-                </div>
-            </div>
-        </div>
-
-        {/* Buttons */}
-        <div className='flex justify-center items-center gap-2 pt-10'>
-            <Button className='font-bold' variant={'outline'}><ChevronLeft size={28} className='text-[#7560EE]' /></Button>
-            <Button className='px-12 bg-[#7560EE] hover:bg-[#7560EE]/80 font-bold text-lg'>Submit</Button>
-        </div>
-      </div>
+    <div className="w-full h-screen flex justify-center items-center bg-neutral-100">
+      <h1 className="text-4xl font-bold">Preparing your quiz...</h1>
     </div>
-  )
-}
+  );
+};
 
-export default Page
+export default JoinQuizPage;

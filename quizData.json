@@ -1,0 +1,105 @@
+{
+    "questions": [
+      {
+        "question": "Are you a morning person?",
+        "options": ["Yes", "No", "Maybe", "Sometimes"],
+        "answer": "No"
+      },
+      {
+        "question": "Do you prefer tea over coffee?",
+        "options": ["Yes", "No", "Maybe", "Sometimes"],
+        "answer": "Yes"
+      },
+      {
+        "question": "Do you enjoy outdoor activities?",
+        "options": ["Yes", "No", "Maybe", "Sometimes"],
+        "answer": "Maybe"
+      },
+      {
+        "question": "Are you an early riser?",
+        "options": ["Yes", "No", "Maybe", "Sometimes"],
+        "answer": "Sometimes"
+      },
+      {
+        "question": "Do you like to plan your day in advance?",
+        "options": ["Yes", "No", "Maybe", "Sometimes"],
+        "answer": "Yes"
+      },
+      {
+        "question": "Do you prefer working in a quiet environment?",
+        "options": ["Yes", "No", "Maybe", "Sometimes"],
+        "answer": "Yes"
+      },
+      {
+        "question": "Do you enjoy trying new foods?",
+        "options": ["Yes", "No", "Maybe", "Sometimes"],
+        "answer": "Maybe"
+      },
+      {
+        "question": "Are you comfortable with spontaneous plans?",
+        "options": ["Yes", "No", "Maybe", "Sometimes"],
+        "answer": "Sometimes"
+      },
+      {
+        "question": "Do you prefer reading books over watching movies?",
+        "options": ["Yes", "No", "Maybe", "Sometimes"],
+        "answer": "No"
+      },
+      {
+        "question": "Do you find it easy to focus on one task at a time?",
+        "options": ["Yes", "No", "Maybe", "Sometimes"],
+        "answer": "Maybe"
+      },
+      {
+        "question": "Do you enjoy working on creative projects?",
+        "options": ["Yes", "No", "Maybe", "Sometimes"],
+        "answer": "Yes"
+      },
+      {
+        "question": "Do you prefer to work alone rather than in a group?",
+        "options": ["Yes", "No", "Maybe", "Sometimes"],
+        "answer": "Maybe"
+      },
+      {
+        "question": "Do you like to follow routines and habits?",
+        "options": ["Yes", "No", "Maybe", "Sometimes"],
+        "answer": "Yes"
+      },
+      {
+        "question": "Do you enjoy engaging in physical exercise regularly?",
+        "options": ["Yes", "No", "Maybe", "Sometimes"],
+        "answer": "Sometimes"
+      },
+      {
+        "question": "Are you a detail-oriented person?",
+        "options": ["Yes", "No", "Maybe", "Sometimes"],
+        "answer": "Yes"
+      },
+      {
+        "question": "Do you like to keep your workspace organized?",
+        "options": ["Yes", "No", "Maybe", "Sometimes"],
+        "answer": "Yes"
+      },
+      {
+        "question": "Do you prefer structured over flexible schedules?",
+        "options": ["Yes", "No", "Maybe", "Sometimes"],
+        "answer": "Yes"
+      },
+      {
+        "question": "Are you open to learning new skills or hobbies?",
+        "options": ["Yes", "No", "Maybe", "Sometimes"],
+        "answer": "Yes"
+      },
+      {
+        "question": "Do you enjoy spending time with friends and family?",
+        "options": ["Yes", "No", "Maybe", "Sometimes"],
+        "answer": "Yes"
+      },
+      {
+        "question": "Do you prefer having a detailed plan for your vacations?",
+        "options": ["Yes", "No", "Maybe", "Sometimes"],
+        "answer": "Maybe"
+      }
+    ]
+  }
+  
