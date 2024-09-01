@@ -19,14 +19,14 @@ const Page: React.FC = () => {
   const handleSelectOption = (option: string) => {
     // Store the selected answer
     setAnswers([...answers, option]);
-
+  
     // Move to the next question or finish the quiz
     if (currentQuestionIndex + 1 < quizData.questions.length) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
       // Redirect to the results page with the answers as a query parameter
-      const queryString = encodeURIComponent(JSON.stringify([...answers, option]));
-      router.push(`/results?answers`);
+      const queryString = encodeURIComponent(JSON.stringify(answers));
+      router.push(`/results?answers=${queryString}`);
     }
   };
 

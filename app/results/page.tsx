@@ -1,11 +1,19 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import quizData from '@/quizData.json'; // Adjust the path as necessary
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Results: React.FC = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ResultsContent />
+    </Suspense>
+  );
+};
+
+const ResultsContent: React.FC = () => {
   const searchParams = useSearchParams();
   const userAnswers = JSON.parse(decodeURIComponent(searchParams.get('answers') || '[]'));
 
@@ -13,7 +21,7 @@ const Results: React.FC = () => {
   const questionsPerPage = 5;
 
   const score = userAnswers.reduce((total: number, answer: string, index: number) => {
-    if (answer === quizData.questions[index].answer) {
+    if (answer === quizData.questions[index].answer || answer === '') {
       return total + 1;
     }
     return total;
@@ -35,11 +43,10 @@ const Results: React.FC = () => {
   return (
     <div className='w-full h-screen bg-[#E57494]/30 flex flex-col justify-center items-center relative'>
       <img src='doodles/d1.svg' alt='' className='absolute top-[10vh] w-[40vw]' />
-    
-    <img src='doodles/d2.svg' alt='' className='absolute w-52 -rotate-12 left-20 top-[45vh]' />
-    <img src='doodles/d3.svg' alt='' className='absolute w-20 rotate-12 left-64 top-[42vh]' />
-    <img src='doodles/d4.svg' alt='' className='absolute w-60 right-20 top-[20vh]' />
-    <img src='doodles/d5.svg' alt='' className='absolute w-44 right-72 top-[58vh]' />
+      <img src='doodles/d2.svg' alt='' className='absolute w-52 -rotate-12 left-20 top-[45vh]' />
+      <img src='doodles/d3.svg' alt='' className='absolute w-20 rotate-12 left-64 top-[42vh]' />
+      <img src='doodles/d4.svg' alt='' className='absolute w-60 right-20 top-[20vh]' />
+      <img src='doodles/d5.svg' alt='' className='absolute w-44 right-72 top-[58vh]' />
 
       <h1 className='text-5xl font-bold -translate-y-1'>Quiz <span className='text-[#8fa9f3]'>Results</span></h1>
       <div className='w-[32vw] h-[64vh] overflow-y-auto p-6 bg-[#8fa9f3]/60 rounded-2xl shadow-md z-30 mt-8'>
@@ -71,7 +78,7 @@ const Results: React.FC = () => {
           onClick={handlePrevPage}
           disabled={currentIndex === 0}
         >
-          <span className='text-2xl font-bold text-white'><ChevronLeft className='text-green-700' strokeWidth={3} size={25} /></span>
+          <span className='text-2xl font-bold text-white'><ChevronLeft className='text-[#8fa9f3]' strokeWidth={3} size={25} /></span>
         </button>
         <button
           className={` flex items-center justify-center py-4 rounded-full ml-4 ${
@@ -80,31 +87,13 @@ const Results: React.FC = () => {
           onClick={handleNextPage}
           disabled={currentIndex === totalPages - 1}
         >
-          <span className='text-2xl font-bold text-white'><ChevronRight className='text-green-700' strokeWidth={3} size={25} /></span>
+          <span className='text-2xl font-bold text-white'><ChevronRight className='text-[#8fa9f3]' strokeWidth={3} size={25} /></span>
         </button>
       </div>
       <div className='translate-y-2 flex items-center'>
-        {/* <button
-          className={` flex items-center justify-center py-4 px-6 rounded-full mr-4 ${
-            currentIndex === 0 ? 'opacity-50 cursor-not-allowed' : ''
-          }`}
-          onClick={handlePrevPage}
-          disabled={currentIndex === 0}
-        >
-          <span className='text-2xl font-bold text-white'><ChevronLeft className='text-green-700' strokeWidth={3} size={25} /></span>
-        </button> */}
         <div className='bg-black flex items-center justify-center py-4 px-6 rounded-full'>
           <h2 className='text-2xl font-bold text-white'><span className='text-[#8fa9f3]'>Your Score:</span> {score} / {quizData.questions.length}</h2>
         </div>
-        {/* <button
-          className={` flex items-center justify-center py-4 px-6 rounded-full ml-4 ${
-            currentIndex === totalPages - 1 ? 'opacity-50 cursor-not-allowed' : ''
-          }`}
-          onClick={handleNextPage}
-          disabled={currentIndex === totalPages - 1}
-        >
-          <span className='text-2xl font-bold text-white'><ChevronRight className='text-green-700' strokeWidth={3} size={25} /></span>
-        </button> */}
       </div>
     </div>
   );
