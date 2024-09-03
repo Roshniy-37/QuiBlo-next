@@ -12,7 +12,7 @@ function HomeHeader() {
           <p className='font-bold text-3xl px-3 text-white'>QuiBlo</p>
         </div>
         <div className='flex'>
-          <button className='border-[#1acdd5] border-2 cursor-pointer rounded-md text-center text-xl py-1 px-3 w-fit'>Sign up</button>
+          <button className='border-white border-2 cursor-pointer rounded-md text-center text-xl py-1 px-3 w-fit'>Sign up</button>
         </div>
       </div>
     </div>
