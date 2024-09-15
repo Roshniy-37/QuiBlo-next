@@ -1,4 +1,5 @@
 'use client'
+
 import { useState } from "react"
 import React from 'react'
 
@@ -19,7 +20,7 @@ function page() {
     const initialQuestions = Array.from({ length: Number(numberOfQuestions) }, () => ({
       question: '',
       correctAnswer: '',
-      options: ['', '', '', ''], // Assuming 4 options per question
+      options: ['', '', '', ''],
     }));
     setQuestions(initialQuestions);
     setFormSubmitted(true);
@@ -39,12 +40,11 @@ function page() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log({ quizTitle, quizDescription, questions }); // You can handle form submission here
+    console.log({ quizTitle, quizDescription, questions });
   };
 
   return (
     <div className="min-h-screen bg-[#020427] flex flex-col items-center py-10">
-      {/* Main Header */}
       <h1 className="text-4xl text-slate-200 font-bold text-center mb-10">Create Your Quiz</h1>
 
       {/* Quiz Title and Description Section */}
